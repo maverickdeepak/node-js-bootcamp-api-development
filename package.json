@@ -1,0 +1,23 @@
+{
+  "name": "api-development",
+  "version": "1.0.0",
+  "description": "web development bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "web",
+    "html",
+    "css",
+    "node",
+    "react"
+  ],
+  "author": "Deepak",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
