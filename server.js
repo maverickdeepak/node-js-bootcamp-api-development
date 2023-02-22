@@ -1,18 +1,21 @@
 const express = require("express");
+const app = express();
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const connectDB = require("./config/db");
+const colors = require("colors");
+const errorHandler = require("./middlewares/error");
 
 // load .env file
 dotenv.config({ path: "./config.env" });
 const PORT = process.env.PORT;
-const app = express();
-const logger = require("./middlewares/logger");
 const bootCampsRoute = require("./routes/bootcamps");
 
 // global middlewares
 app.use(express.json());
 
-// app.use(logger);
+// database connection
+connectDB();
 
 // development logging middlewares
 if (process.env.NODE_ENV === "development") {
@@ -21,7 +24,8 @@ if (process.env.NODE_ENV === "development") {
 
 // routes
 app.use("/api/v1", bootCampsRoute);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`server listening on port ${PORT}`);
+  console.log(`server listening on port ${PORT}`.yellow.bold);
 });
