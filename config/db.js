@@ -6,7 +6,7 @@ const connectDB = () => {
     .then((conn) =>
       console.log(
         `database connection established on host: ${conn.connection.host}`
-          .underline.bgYellow
+          .underline.bgBlue
       )
     )
     .catch((error) => console.log(`database connection error: ${error}`.bgRed));

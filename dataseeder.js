@@ -9,9 +9,7 @@ const Bootcamp = require("./models/bootcamps");
 // connect to database
 mongoose.set("strictQuery", true);
 mongoose
-  .connect(
-    "mongodb+srv://devcamper:mOm4zKC8eluneJj9@cluster0.n6yc4a9.mongodb.net/devcamper?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODB_URI)
   .then((conn) =>
     console.log(
       `database connection established on host: ${conn.connection.host}`

@@ -27,5 +27,5 @@ app.use("/api/v1", bootCampsRoute);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(`server listening on port ${PORT}`.yellow.bold);
+  console.log(`server listening on port ${PORT}`.bgMagenta.bold);
 });
