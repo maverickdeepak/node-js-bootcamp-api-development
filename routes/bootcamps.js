@@ -20,6 +20,6 @@ router.put("/bootcamps/:id", updateBootCamp);
 
 router.delete("/bootcamps/:id", deleteBootCamp);
 
-router.get("/bootcamps/:radius/:distance", getBootCampsInRadius);
+router.get("/bootcamps/radius/:zipcode/:distance", getBootCampsInRadius);
 
 module.exports = router;
